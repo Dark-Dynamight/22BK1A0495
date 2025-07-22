@@ -11,8 +11,19 @@ function App() {
       <div>
         <h1>Url Shortner</h1>
         <form>
-          <label htmlFor="urllink">Enter Url: </label>
-          <input type="text" id="urllink" ></input>
+          <div>
+            <label htmlFor="urllink">Enter Url<span>*</span>: </label>
+            <input type="text" id="urllink" required></input>
+          </div>
+          <div>
+            <label htmlFor="time">Select time: </label>
+            <input type="time" id="time" />
+          </div>
+          <div>
+            <label htmlFor="plink">Pefered link: </label>
+            <input type="text" id="plink" />
+          </div>
+
           <button type="submit" className="btn" f>Shorten</button>
         </form>
       </div>

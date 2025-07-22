@@ -76,6 +76,10 @@ label {
   color: #535bf2;
 }
 
+span {
+  color: red;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
