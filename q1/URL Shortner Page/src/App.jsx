@@ -1,6 +1,4 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -13,7 +11,7 @@ function App() {
         <form>
           <div>
             <label htmlFor="urllink">Enter Url<span>*</span>: </label>
-            <input type="text" id="urllink" required></input>
+            <input type="url" id="urllink" required></input>
           </div>
           <div>
             <label htmlFor="time">Select time: </label>
@@ -21,10 +19,10 @@ function App() {
           </div>
           <div>
             <label htmlFor="plink">Pefered link: </label>
-            <input type="text" id="plink" />
+            <input type="url" id="plink" />
           </div>
-
           <button type="submit" className="btn" f>Shorten</button>
+
         </form>
       </div>
     </>
@@ -35,14 +33,8 @@ async function apicall() {
   let url = document.querySelector("input").value
   form.addListner("submit", async (event) => {
     event.preventDefault()
-    const data = await fetchData(url)
-    console.log(data)
+    let response = await fetch("https://api.shrtco.de/v2/shorten?url=" + url)
   })
 }
 
 export default App
-export async function Myfun() {
-  const data = await apicall()
-  console.log(data)
-  return data
-}
